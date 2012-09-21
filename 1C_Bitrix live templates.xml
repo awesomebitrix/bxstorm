@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templateSet group="1C-Bitrix live templates">
+  <template name="bxpe" value="&lt;?require($_SERVER[&quot;DOCUMENT_ROOT&quot;].&quot;/bitrix/modules/main/include/prolog_before.php&quot;);&#10;$END$&#10;require($_SERVER[&quot;DOCUMENT_ROOT&quot;].&quot;/bitrix/modules/main/include/epilog_after.php&quot;);?&gt;" description="1C-Bitrix prolog and epilog" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSP" value="false" />
+      <option name="SQL" value="false" />
+      <option name="PHP" value="true" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="bxegetl" value="$arSelect = Array(&quot;ID&quot;, &quot;NAME&quot;, &quot;PROPERTY_*&quot;);&#10;$arFilter = Array(&quot;IBLOCK_ID&quot;=&gt;$IBLOCK_ID$, &quot;ACTIVE_DATE&quot;=&gt;&quot;Y&quot;, &quot;ACTIVE&quot;=&gt;&quot;Y&quot;);&#10;$res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);&#10;while($ob = $res-&gt;GetNextElement()) {&#10;    $arItem = $ob-&gt;GetFields();&#10;    $END$&#10;}" description="1C-Bitrix CIBlockElement::GetList" toReformat="true" toShortenFQNames="true">
+    <variable name="IBLOCK_ID" expression="" defaultValue="IBLOCK_ID" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSP" value="false" />
+      <option name="SQL" value="false" />
+      <option name="PHP" value="true" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+</templateSet>
+
