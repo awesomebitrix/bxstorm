@@ -56,7 +56,7 @@
       <option name="OTHER" value="false" />
     </context>
   </template>
-  <template name="bxmod" value="CModule::IncludeModule(&quot;iblock&quot;);" description="1C-Bitrix CModule::IncludeModule(&quot;...&quot;);" toReformat="false" toShortenFQNames="true">
+  <template name="bxmod" value="CModule::IncludeModule(&quot;iblock$END$&quot;);" description="1C-Bitrix CModule::IncludeModule(...)" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="HTML_TEXT" value="false" />
       <option name="HTML" value="false" />
@@ -71,6 +71,25 @@
       <option name="SQL" value="false" />
       <option name="PHP" value="true" />
       <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="bxphpc" value="$obCache = new CPHPCache;&#10;&#10;if($obCache-&gt;InitCache(60*60*24, date('d.m.Y'), &quot;/&quot;)) {&#10;&#9;$vars = $obCache-&gt;GetVars();&#10;&#9;$arFreeDelivery = $vars['arFreeDelivery'];&#10;} else {&#10;&#9;CModule::IncludeModule(&quot;iblock&quot;);&#10;&#9;if($obCache-&gt;StartDataCache()){&#10;&#9;&#9;$arFilter = Array('IBLOCK_ID' =&gt; $IBLOCK_ID$);&#10;&#9;&#9;$res = CIBlockElement::GetList(Array(), $arFilter, false, false, Array(&quot;ID&quot;, &quot;NAME&quot;));&#10;&#9;&#9;while ($ob = $res-&gt;GetNextElement()) {&#10;&#9;&#9;&#9;$arC = $ob-&gt;GetFields();&#10;&#9;&#9;&#9;$arResult[$arC['ID']] = $arC['NAME'];&#10;&#9;&#9;}&#10;&#9;&#9;&#10;&#9;&#9;$obCache-&gt;EndDataCache(array(&#10;        &quot;arResult&quot;    =&gt; $arResult&#10;        )); &#10;&#9;}&#10;}" description="1C-Bitrix CPHPCache" toReformat="false" toShortenFQNames="true">
+    <variable name="IBLOCK_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSP" value="false" />
+      <option name="SQL" value="false" />
+      <option name="HAML" value="false" />
+      <option name="PHP" value="true" />
       <option name="OTHER" value="false" />
     </context>
   </template>
